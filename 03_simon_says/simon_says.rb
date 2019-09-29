@@ -27,3 +27,18 @@ def start_of_word (word,amount)
     end
     result
 end
+def first_word word
+    result=word.partition(" ").first
+end
+def titleize worded
+    words_no_cap=["and", "or", "the", "over", "to", "the", "a", "but"]
+    result=worded.capitalize
+    result = result.split(" ").map{|word|
+    
+    if words_no_cap.include?(word) 
+        word
+    else
+        word.capitalize
+    end}
+    result=result.join(" ")
+end
